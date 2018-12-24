@@ -1,0 +1,20 @@
+apply plugin: 'java-library'
+
+dependencies {
+    compile 'com.squareup:javapoet:1.11.1'
+    compile 'com.google.auto.service:auto-service:1.0-rc4'
+    compile 'com.google.auto:auto-common:0.8'
+    implementation project(':BindViewAnnotion')
+    implementation deps.auto.common
+    implementation deps.guava
+    api deps.javapoet
+    compileOnly deps.auto.service
+    implementation 'com.android.support:support-annotations:28.0.0'
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
+
+tasks.withType(JavaCompile){
+    options.encoding='UTF-8'
+}
